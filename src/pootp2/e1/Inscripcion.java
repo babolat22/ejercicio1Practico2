@@ -44,4 +44,10 @@ public class Inscripcion {
            System.out.println("-->" + inscripto.getNombre()+" "+inscripto.getApellido() + " "+ inscripto.dni);
         }
     }
+    
+    public void mostrarMaterias(Alumno al){
+           if(inscriptos.contains(al))
+              System.out.println("--> CURSA " + asignatura.nombreMat);
+        
+    }
 }
