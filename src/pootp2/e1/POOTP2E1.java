@@ -6,7 +6,6 @@
 package pootp2.e1;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -24,14 +23,26 @@ public class POOTP2E1 {
     public static void main(String[] args) {
         // TODO code application logic here
         Alumno a1 = new Alumno(28184893, "Juanjo", "Saez", 37);
+        Alumno a2 = new Alumno(30900923, "Mayra", "Sosa", 21);
+        Alumno a3 = new Alumno(32455634, "Cristy", "Yalez", 23);
+        
         Materia m1 = new Materia(120, "Ingenieria", 32);
+        // fecha
         Date fecha = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String hoy = sdf.format(fecha);
+        
         Inscripcion insc = new Inscripcion(m1, sdf.format(fecha));
         insc.agregarIncripto(a1);
-        JOptionPane.showMessageDialog(null, hoy);
+        insc.agregarIncripto(a2);
+        insc.agregarIncripto(a3);
+        
+        JOptionPane.showMessageDialog(null, "Mostrando una fecha "+hoy);
         JOptionPane.showMessageDialog(null, insc.inscriptos.get(0).nombre);
+        insc.cargaCalificacion(a1, 8.75); 
+        
+        JOptionPane.showConfirmDialog(null, "La calificacion del pibe es: " + insc.inscriptos.get(0).getNota());
+        insc.mostrarInscriptos();
     }
     
     

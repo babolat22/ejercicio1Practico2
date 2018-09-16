@@ -15,6 +15,15 @@ public class Alumno {
     String apellido;
     int edad;
     Inscripcion cursa;
+    double nota;        //Este atributo es vacio. solo se llena en el listado de inscriptos
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public double getNota() {
+        return nota;
+    }
  
     public Alumno(int dni, String nombre, String apellido, int edad) {
         this.dni = dni;
