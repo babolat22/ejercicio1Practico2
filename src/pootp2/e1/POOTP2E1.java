@@ -38,6 +38,8 @@ public class POOTP2E1 {
         Inscripcion insc = new Inscripcion(m1, sdf.format(fecha)); //inscripcion o cursada 2018 materia
         //agrego los alumnos a materia 1 : Ingeniería
         insc.agregarIncripto(a1);
+        insc.agregarIncripto(a1);
+        
         insc.agregarIncripto(a2);
         insc.agregarIncripto(a3);
         // Crear cursadas de Quimica y Lengua
