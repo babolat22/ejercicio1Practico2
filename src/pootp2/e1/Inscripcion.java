@@ -44,9 +44,9 @@ public class Inscripcion {
     
     public void mostrarInscriptos(){
         System.out.println("Lista de Inscriptos a: " + asignatura.getNombreMat()); 
-        for (Alumno inscripto : inscriptos) {
-           System.out.println("-->" + inscripto.getNombre()+" "+inscripto.getApellido() + " "+ inscripto.dni);
-        }
+        inscriptos.forEach((inscripto) -> {
+            System.out.println("-->" + inscripto.getNombre()+" "+inscripto.getApellido() + " "+ inscripto.getDni());
+        });
     }
     
     public void mostrarMaterias(Alumno al){
