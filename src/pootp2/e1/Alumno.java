@@ -10,12 +10,12 @@ package pootp2.e1;
  * @author juanj
  */
 public class Alumno {
-    int dni;
-    String nombre;
-    String apellido;
-    int edad;
-    Inscripcion cursa;
-    double nota;        //Este atributo es vacio. solo se llena en el listado de inscriptos
+    private int dni;
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private Inscripcion cursa;
+    private double nota;        //Este atributo es vacio. solo se llena en el listado de inscriptos
 
     public void setNota(double nota) {
         this.nota = nota;
