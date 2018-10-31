@@ -6,6 +6,7 @@
 package pootp2.e1;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -31,11 +32,11 @@ public class POOTP2E1 {
         Materia m3 = new Materia(119, "Lengua", 34);
         
         // fecha
-        Date fecha = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String hoy = sdf.format(fecha);
+        LocalDate fecha = LocalDate.now();
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+       // String hoy = sdf.format(fecha);
         
-        Inscripcion insc = new Inscripcion(m1, sdf.format(fecha)); //inscripcion o cursada 2018 materia
+        Inscripcion insc = new Inscripcion(m1, fecha); //inscripcion o cursada 2018 materia
         //agrego los alumnos a materia 1 : Ingeniería
         insc.agregarIncripto(a1);
         insc.agregarIncripto(a1);
@@ -43,15 +44,15 @@ public class POOTP2E1 {
         insc.agregarIncripto(a2);
         insc.agregarIncripto(a3);
         // Crear cursadas de Quimica y Lengua
-        Inscripcion insc2 = new Inscripcion(m2, sdf.format(fecha));
-        Inscripcion insc3 = new Inscripcion(m3, sdf.format(fecha));
+        Inscripcion insc2 = new Inscripcion(m2, fecha);
+        Inscripcion insc3 = new Inscripcion(m3, fecha);
         //agrego alumno "a1" inscripto TAMBIEN A m2 y m3
         insc2.agregarIncripto(a1);
         insc3.agregarIncripto(a1);
         // Otro alumno (Mayra) se inscribe a Quimica (m2)...
         insc2.agregarIncripto(a2);
         
-        JOptionPane.showMessageDialog(null, "Mostrando una fecha "+hoy);
+        JOptionPane.showMessageDialog(null, "Mostrando una fecha "+ fecha);
         JOptionPane.showMessageDialog(null, insc.inscriptos.get(0).nombre);
         insc.cargaCalificacion(a1, 8.75); 
         

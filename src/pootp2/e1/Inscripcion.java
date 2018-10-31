@@ -6,6 +6,7 @@ Inicialmente el sistema está pensado para registrar la última calificación ob
  */
 package pootp2.e1;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
@@ -17,20 +18,23 @@ cursan una materia en particular.
 public class Inscripcion {
     ArrayList<Alumno> inscriptos;
     Materia asignatura;
-    String fecha;
+    LocalDate fecha;
     int i=0;
     //ArrayList<Integer> notas;
 
-    public Inscripcion(Materia asignatura, String fecha) {
+    public Inscripcion(Materia asignatura, LocalDate fecha) {
         this.asignatura = asignatura;
         this.fecha = fecha;
-        inscriptos = new ArrayList<Alumno>();
+        inscriptos = new ArrayList<>();
     }
 
        
     public void agregarIncripto(Alumno a){
         if(!inscriptos.contains(a))
                 inscriptos.add(a);
+        else
+            System.out.println("Alumno ya inscripto! "+ a.getNombre()+" "+a.getApellido());
+        
     }
     
     public void cargaCalificacion(Alumno a, double calif){
